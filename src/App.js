@@ -1,23 +1,42 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    
+      <Switch>
+
+      <Route exact path="/">
+
+          <Login currentUser={currentUser} setCurrentUser={setCurrentUser}/>
+        </Route>
+     
+       
+        <Route  path="/signup">
+
+        <SignupForm currentUser={currentUser} setCurrentUser={setCurrentUser}/>
+        </Route>
+
+
+        <Route exact path="/question">
+        
+          <QuestionPage currentUser={currentUser} setCurrentUser={setCurrentUser} question={question} setQuestion={setQuestion}/>
+        </Route>
+        <Route  path="/answer">
+            <AnswerPage question={question} setQuestion={setQuestion} currentUser={currentUser} setCurrentUser={setCurrentUser}/>
+           
+            </Route>
+            <Route  path="/postquestion">
+            <PostQuestion question={question} setQuestion={setQuestion} currentUser={currentUser} setCurrentUser={setCurrentUser}/>
+           
+            </Route>
+
+        
+         <Route path="**">
+          <NotFound />
+        </Route>
+      </Switch> 
     </div>
   );
 }
