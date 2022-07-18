@@ -4,11 +4,12 @@ import { ForgetPassword } from './ForgetPassword';
 import { Register } from './Register';
 import { Routes,Route,Navigate} from "react-router-dom";
 import { Sidebar } from './Sidebar';
+import { Navbar } from './Navbar';
 
 function App() {
   return (
       <>
-      <div id="wrapper">
+      <div id="wrapper" style={{width:"100%"}}>
           <Routes>
 
           <Route path="/Login" element={<Login/>}/>
@@ -35,15 +36,14 @@ function App() {
 export default App; 
 
 function MainBoard({flow}){
-    return (
-        <>
-             <div id="wrapper" style={{width:"100%"}}>
-          <Sidebar/>
-          <div id="content-wrapper" className="d-flex flex-column">
-          <div id="content">
-            {/* <Topbar/> */}
-            <div className="container-fluid">
-            <section className="routes-container">
+  return (
+    <div className="App">
+       <Navbar/>
+       <div className='home-container-1'>
+        <Sidebar/>
+       <div className='home-container-2'>
+          <div >
+           <section className="routes-container">
                { 
                {
                   //  "":<Dashboard/>,
@@ -58,10 +58,40 @@ function MainBoard({flow}){
                }
             </section>  
             </div>
-          </div>
-          {/* <Footer/> */}
-          </div>    
-      </div></>
-    );
-}
+       </div>
+       </div>
+    </div>
+  );
+              }
+  
+  
+    // return (
+    //     <>
+    //          <div id="wrapper" style={{width:"100%"}}>
+    //       <Sidebar/>
+    //       <div id="content-wrapper" className="d-flex flex-column">
+    //       <div id="content">
+    //         {/* <Topbar/> */}
+    //         <div className="container-fluid">
+    //         <section className="routes-container">
+    //            { 
+    //            {
+    //               //  "":<Dashboard/>,
+    //               //  "StudentDetails":<StudentDetails/>,
+    //               //  "TeacherDetails":<TeacherDetails/>,
+    //               //  "AddStudent":<AddStudent/>,
+    //               //  "AddTeacher":<AddTeacher/>,
+    //               //  "404-Page":<NotFound/>,
+    //               //  "StudentEdit":<StudentEdit/>,
+    //               //  "TeacherEdit":<TeacherEdit/>,
+    //            }[flow]
+    //            }
+    //         </section>  
+    //         </div>
+    //       </div>
+    //       {/* <Footer/> */}
+    //       </div>    
+    //   </div></>
+    // );
+
 
