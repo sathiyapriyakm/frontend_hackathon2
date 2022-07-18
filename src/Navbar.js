@@ -2,11 +2,8 @@ import React from 'react';
 import { useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import logo from './assets/logo.png';
-// import { useSelector, useDispatch } from 'react-redux';
 import search from './assets/search-solid.svg';
-import Avatar from './Avatar';
 import './Navbar.css';
-// import { setCurrentUser } from '../../actions/currentUser';
 
 export const Navbar = () => {
 
@@ -45,13 +42,8 @@ export const Navbar = () => {
                 <input type="text" placeholder='Search...'/>
                 <img src={search} alt="" width="18" className='search-icon'/>
             </form>
-            {/* {User === null ? 
-            <Link to='/Login' className='nav-item nav-links'>Log in</Link> :
-            <>
-            <Avatar backgroundColor='#009dff' px="12px" py="6px" borderRadius="50%" color="white"><Link to={`/Users/${User?.result?._id}`} style={{color:"white", textDecoration:'none'}}>{User.result.name.charAt(0).toUpperCase()}</Link></Avatar>
-            <button className='nav-item nav-links' onClick={handleLogout}>Log out</button>
+            <><Link to='/Login'  className='nav-item nav-links' >Log out</Link>
             </>
-            } */}
         </div>
     </nav>
   )
