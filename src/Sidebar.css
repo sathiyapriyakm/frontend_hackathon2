@@ -4,7 +4,7 @@
     transition: box-shadow ease-in-out 0.1s, transform ease-in-out 0.1s;
     transform: translateZ(0);
     box-sizing: border-box;
-    font-size: 20px;
+    font-size: large;
     
 }
 
@@ -39,7 +39,7 @@
     color: black;
 }
 
-.active{
+.side-nav-links:active{
     font-weight: bolder;
     color: black;
     background-color: rgb(225, 225, 225);
