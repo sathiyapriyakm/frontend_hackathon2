@@ -39,7 +39,7 @@
     color: black;
 }
 
-.side-nav-links:active{
+.side-nav-links.active{
     font-weight: bolder;
     color: black;
     background-color: rgb(225, 225, 225);

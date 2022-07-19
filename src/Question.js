@@ -66,14 +66,13 @@ export const HomeMainbar = () => {
 
 const [questionsList, setQuestionsList] = useState([]);
 const getQuestionsList=()=>{
-  fetch(`${API}/questionsList`,{
+  fetch(`${API}/questionList/`,{
     method:"GET",
   }
   )
   .then((data)=>(data.json()))
   .then((list)=>setQuestionsList(list));
   }   
-  console.log(questionsList);
 useEffect(()=>getQuestionsList(),[]);
 
   const askQuestion = () =>{

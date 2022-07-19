@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './AskQuestion.css';
 import  { useNavigate } from 'react-router-dom';
 import Background from './assets/background.svg';
-// import { askQuestion } from '../../actions/question' 
+import { API } from './global';
 
 
 export const AskQuestion = () => {
@@ -11,14 +11,35 @@ export const AskQuestion = () => {
   const [questionBody, setQuestionBody] = useState('')
   const [questionTags, setQuestionTags] = useState('')
 
-  // const dispatch =  useDispatch()
-  // const User = useSelector((state) => (state.currentUserReducer))
+
   const navigate = useNavigate()
+
+  const qn=()=>navigate(`/`);
+  const addQuestion =(question) => {
+    console.log(API);
+    console.log(question);
+    fetch(`${API}/askQuestion`, {
+    method: "POST",
+    body: JSON.stringify(question),
+    headers: {
+      "Content-Type" : "application/json",
+    },
+  }).then((data)=>data.json())
+  .then((data1)=>{
+      console.log(data1.message);
+      if(data1.message==="Question already available"){
+          qn();}
+      else {
+        qn();
+      }
+  });
+  };
 
   const handleSubmit = (e) =>{
     e.preventDefault()
-    //console.log({ questionTitle, questionBody, questionTags})
-    // dispatch(askQuestion({ questionTitle, questionBody, questionTags, userPosted: User.result.name, userId: User?.result?._id}, navigate))
+    console.log({ questionTitle, questionBody, questionTags})
+    let question={questionTitle:questionTitle,questionBody:questionBody,questionTags:questionTags};
+    addQuestion(question);
   }
   
   const handleEnter = (e) =>{
@@ -50,7 +71,7 @@ export const AskQuestion = () => {
                   <input type="text" id='ask-ques-tags' onChange={(e) => {setQuestionTags(e.target.value.split(" "))}} placeholder='e.g. (xml html android)'/>
               </label>
             </div>
-            <input type="submit" value='Review your question' className='review-btn'/>
+            <input type="submit" value='Post your question' className='review-btn'/>
           </form>
       </div>
     </div>
