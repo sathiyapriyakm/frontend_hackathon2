@@ -3,7 +3,6 @@ import './AskQuestion.css';
 import  { useNavigate } from 'react-router-dom';
 import Background from './assets/background.svg';
 import { API } from './global';
-import { NestCamWiredStandTwoTone } from '@mui/icons-material';
 
 
 export const AskQuestion = () => {
