@@ -12,7 +12,7 @@ export const Sidebar = () => {
           </NavLink>
           <div className='side-nav-div'>
             <div><p>PUBLIC</p></div>
-            <NavLink to='/Questions' className='side-nav-links' activeClassName="active">
+            <NavLink to='/Questionsbar' className='side-nav-links' activeClassName="active">
                 <img src={Globe} alt="Globe" width="18px" style={{opacity: "0.7"}}/>
                 <p style={{paddingLeft: "10px"}}>Questions</p>
             </NavLink>

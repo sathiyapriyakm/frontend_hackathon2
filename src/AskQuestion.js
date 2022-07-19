@@ -3,6 +3,7 @@ import './AskQuestion.css';
 import  { useNavigate } from 'react-router-dom';
 import Background from './assets/background.svg';
 import { API } from './global';
+import { NestCamWiredStandTwoTone } from '@mui/icons-material';
 
 
 export const AskQuestion = () => {
@@ -16,8 +17,6 @@ export const AskQuestion = () => {
 
   const qn=()=>navigate(`/`);
   const addQuestion =(question) => {
-    console.log(API);
-    console.log(question);
     fetch(`${API}/askQuestion`, {
     method: "POST",
     body: JSON.stringify(question),
@@ -25,20 +24,25 @@ export const AskQuestion = () => {
       "Content-Type" : "application/json",
     },
   }).then((data)=>data.json())
-  .then((data1)=>{
-      console.log(data1.message);
-      if(data1.message==="Question already available"){
-          qn();}
-      else {
-        qn();
-      }
-  });
+  .then((data1)=>{qn();});
   };
 
   const handleSubmit = (e) =>{
-    e.preventDefault()
-    console.log({ questionTitle, questionBody, questionTags})
-    let question={questionTitle:questionTitle,questionBody:questionBody,questionTags:questionTags};
+    e.preventDefault();
+    console.log({ questionTitle, questionBody, questionTags});
+    let question={
+        "questionTitle":questionTitle,
+        "questionBody": questionBody,
+        "questionTags": questionTags,
+        "noOfAnswers": 1,
+        "upVote": 0,
+        "downVote": 0,
+        "views":0,
+        "userPosted": "Sathya",
+        "userId": "62cfb61cbedb8b39b65f0398",
+        "askedOn": new Date(),
+        "answer": []
+    }
     addQuestion(question);
   }
   

@@ -9,6 +9,8 @@ import {HomeMainbar} from "./HomeMainbar"
 import {AskQuestion} from "./AskQuestion"
 import {NotFound} from "./NotFound.js"
 import {Tags} from "./Tags.js"
+import {Users} from "./Users.js"
+import {Questionsbar} from "./Questionsbar.js"
 
 
 function App() {
@@ -22,6 +24,8 @@ function App() {
           <Route path="/Register" element={<Register/>}/>
           <Route path="/" element={<MainBoard flow=""/>}/>
           <Route path="/Tags" element={<MainBoard flow="Tags"/>}/>
+          <Route path="/Users" element={<MainBoard flow="Users"/>}/>
+          <Route path="/Questionsbar" element={<MainBoard flow="Questionsbar"/>}/>
           
          <Route path="/AskQuestion" element={<MainBoard flow="AskQuestion"/>}/>
            {/* <Route path="/TeacherDetails" element={<MainBoard flow="TeacherDetails"/>}/>
@@ -58,6 +62,8 @@ function MainBoard({flow}){
                     "":<HomeMainbar/>,
                     "AskQuestion":<AskQuestion/>,
                     "Tags":<Tags/>,
+                    "Users":<Users/>,
+                    "Questionsbar":<Questionsbar/>,
                   //  "TeacherDetails":<TeacherDetails/>,
                   //  "AddStudent":<AddStudent/>,
                   //  "AddTeacher":<AddTeacher/>,
