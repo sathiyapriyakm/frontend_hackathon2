@@ -11,6 +11,7 @@ import {NotFound} from "./NotFound.js"
 import {Tags} from "./Tags.js"
 import {Users} from "./Users.js"
 import {Questionsbar} from "./Questionsbar.js"
+// import {QuestionsDetails} from "./QuestionsDetails.js"
 
 
 function App() {
@@ -26,18 +27,8 @@ function App() {
           <Route path="/Tags" element={<MainBoard flow="Tags"/>}/>
           <Route path="/Users" element={<MainBoard flow="Users"/>}/>
           <Route path="/Questionsbar" element={<MainBoard flow="Questionsbar"/>}/>
-          
+          {/* <Route path="/Questions/:id" element={<MainBoard flow="QuestionsDetails"/>}/> */}
          <Route path="/AskQuestion" element={<MainBoard flow="AskQuestion"/>}/>
-           {/* <Route path="/TeacherDetails" element={<MainBoard flow="TeacherDetails"/>}/>
-          <Route path="/AddStudent" element={<MainBoard flow="AddStudent"/>}/>
-          <Route path="/Tables" element={<MainBoard flow="Tables"/>}/>
-          <Route path="*" element={<Navigate replace to="/404-Page"/>}/>
-          <Route path="/Dashboard" element={<Navigate replace to="/"/>}/>
-          <Route path="/students/edit/:studentId" element={<MainBoard flow="StudentEdit"/>}/>
-          <Route path="/teachers/edit/:teacherId" element={<MainBoard flow="TeacherEdit"/>}/>
-          <Route path="/Add-Student" element={<MainBoard flow="AddStudent"/>}/>
-          <Route path="/Add-Teacher" element={<MainBoard flow="AddTeacher"/>}/> */}
-
           <Route path="/404-Page" element={<MainBoard flow="404-Page"/>}/>
           <Route path="*" element={<Navigate replace to="/404-Page"/>}/>
           </Routes>
@@ -64,12 +55,8 @@ function MainBoard({flow}){
                     "Tags":<Tags/>,
                     "Users":<Users/>,
                     "Questionsbar":<Questionsbar/>,
-                  //  "TeacherDetails":<TeacherDetails/>,
-                  //  "AddStudent":<AddStudent/>,
-                  //  "AddTeacher":<AddTeacher/>,
-                   "404-Page":<NotFound/>,
-                  //  "StudentEdit":<StudentEdit/>,
-                  //  "TeacherEdit":<TeacherEdit/>,
+                    // "QuestionsDetails":<QuestionsDetails/>,
+                    "404-Page":<NotFound/>,
                }[flow]
                }
             </section>  

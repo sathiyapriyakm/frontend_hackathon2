@@ -18,7 +18,7 @@ const Questions = ({question}) => {
             <p>answers</p>
         </div>
         <div className="display-question-details">
-            <Link to={`/Questions/${question._id}`} className='question-title-link'>{question.questionTitle}</Link>
+            <Link to={`/`} className='question-title-link'>{question.questionTitle}</Link>
             <div className='display-tags-time'>
                 <div className='display-tags'>
                     {
