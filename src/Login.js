@@ -100,9 +100,7 @@ import {
       <div className="text-center" style={{color:"blue"}}>
         <a href="#" onClick={() => navigate("/Register")}  className="small" >Create an Account!</a>
     </div>
-    <div className="text-center" style={{color:"blue"}}>
-        <a href="#" onClick={() => navigate("/ForgetPassword")}  className="small" >Already have an account? ForgetPassword!</a>
-    </div>
+    
     </form> 
   </div>;
   }
